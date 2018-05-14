@@ -1,7 +1,7 @@
 {
-    "name": "pixar-usd",
-    "displayName": "Pixar USD",
-    "description": "Pixar USD Language Extension",
+    "name": "AL_usd_vscode_extension",
+    "displayName": "USD for VSCode",
+    "description": "Pixar USD Language Extension from Animal Logic",
     "version": "0.0.1",
     "publisher": "animallogic",
     "engines": {
