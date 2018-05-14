@@ -1,0 +1,26 @@
+{
+    "name": "pixar-usd",
+    "displayName": "Pixar USD",
+    "description": "Pixar USD Language Extension",
+    "version": "0.0.1",
+    "publisher": "animallogic",
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "usd",
+            "aliases": ["USD", "usd"],
+            "extensions": [".usd",".usda"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "usd",
+            "scopeName": "source.usd",
+            "path": "./syntaxes/usd.tmLanguage.json"
+        }]
+    }
+}

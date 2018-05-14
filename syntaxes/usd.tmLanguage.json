@@ -1,0 +1,88 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "USD",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.usd",
+				"match": "\\b(def|over|class|variantSet)\\b"
+			},{
+				"name": "keyword.operator",
+				"match": "\\b(add|append|prepend|delete)\\b"
+			},{
+				"name": "keyword.other",
+				"match": "\\b(uniform|float[0-9]?|int[0-9]?|rel|asset|token|string|color3f|variantSets)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.usd",
+			"begin": "\"|@|<",
+			"end": "\"|@|>",
+			"patterns": [
+				{
+					"name": "constant.character.escape.usd",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"comment": {
+		"patterns": [
+			{
+				"name": "comment.block.js",
+				"begin": "(/\\*)(?:\\s*((@)internal)(?=\\s|(\\*/)))?",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.comment.js"
+					},
+					"2": {
+						"name": "storage.type.internaldeclaration.js"
+					},
+					"3": {
+						"name": "punctuation.decorator.internaldeclaration.js"
+					}
+				},
+				"end": "\\*/",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.js"
+					}
+				}
+			},
+			{
+				"begin": "(^[ \\t]+)?((#)(?:\\s*((@)internal)(?=\\s|$))?)",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.comment.leading.js"
+					},
+					"2": {
+						"name": "comment.line.double-slash.js"
+					},
+					"3": {
+						"name": "punctuation.definition.comment.js"
+					},
+					"4": {
+						"name": "storage.type.internaldeclaration.js"
+					},
+					"5": {
+						"name": "punctuation.decorator.internaldeclaration.js"
+					}
+				},
+				"end": "(?=^)",
+				"contentName": "comment.line.hash.js"
+			}
+		]
+	},
+	"scopeName": "source.usd"
+}
