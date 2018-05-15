@@ -30,8 +30,11 @@
 		},
 		"storage": {
 			"patterns": [{
-				"name": "storage.type.usd",
-				"match": "\\b(float|float2|float3|int|int2|int3|asset|token|string|color3f|rel)\\b"
+				"name": "storage.type.usd.base",
+				"match": "\\b(bool|uchar|int|uint|int64|uint64|half|float|double|string|token|asset|matrix2d|matrix3d|matrix4d|quatd|quatf|quath|double2|float2|half2|int2|double3|float3|half3|int3|double4|float4|half4|int4|rel)\\b"
+			},{
+				"name": "storage.type.usd.ext",
+				"match": "\\b(point3d|point3f|point3h|normal3d|normal3f|normal3h|vector3d|vector3f|vector3h|color3d|color3f|color3h|color4d|color4f|color4h|frame4d|texCoord2h|texCoord2d|texCoord2f|texCoord3h|texCoord3d|texCoord3f)\\b"
 			},{
 				"name": "storage.modifier.usd",
 				"match": "\\b(varying|uniform|custom)\\b"
