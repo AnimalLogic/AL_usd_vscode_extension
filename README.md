@@ -2,7 +2,7 @@
 
 ## Features
 
-Pixar USD Ascii syntax highlighting for VSCode
+Pixar USD Ascii syntax highlighting for VSCode.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ NA
 
 ## Release Notes
 
-### 0.8.5
+### 0.0.1
 
 First Release.
 -----------------------------------------------------------------------------------------------------------
