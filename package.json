@@ -9,6 +9,7 @@
         "type": "git",
         "url": "https://github.al.com.au/rnd/AL_usd_vscode_extension"
     },
+    "icon": "images/USDLogoHeader.png",
     "engines": {
         "vscode": "^1.20.0"
     },
