@@ -2,7 +2,7 @@
     "name": "usd",
     "displayName": "USD for VSCode",
     "description": "Pixar USD Language Extension from Animal Logic",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "animallogic-vscode",
     "keywords": ["pixar", "usd", "usda"],
     "repository": {
