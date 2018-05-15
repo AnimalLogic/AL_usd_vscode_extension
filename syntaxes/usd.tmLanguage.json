@@ -12,33 +12,56 @@
 			"include": "#storage"
 		},
 		{
+			"include": "#variables"
+		},
+		{
 			"include": "#comment"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.usd",
-				"match": "\\b(def|over|class|variantSet)\\b"
-			},{
-				"name": "keyword.operator.usd",
-				"match": "\\b(add|append|prepend|delete)\\b"
-			},{
-				"name": "keyword.other.usd",
-				"match": "\\b(attributes|config|connect|customData|default|dictionary|displayUnit|doc|inherits|kind|mapper|nameChildren|None|offset|payload|permission|prefixSubstitutions|properties|references|relocates|reorder|rootPrims|scale|subLayers|suffixSubstitutions|specializes|symmetryArguments|symmetryFunction|timeSamples|variants|variantSets)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.usd",
+					"match": "\\b(def|over|class|variantSet)\\b"
+				},
+				{
+					"name": "keyword.operator.usd",
+					"match": "\\b(add|append|prepend|delete)\\b"
+				},
+				{
+					"name": "keyword.import.usd",
+					"match": "\\#usda\\W[0-9]+.[0-9]"
+				},
+				{
+					"name": "keyword.other.usd",
+					"match": "\\b(attributes|config|connect|customData|default|dictionary|displayUnit|doc|inherits|kind|mapper|nameChildren|None|offset|payload|permission|prefixSubstitutions|properties|references|relocates|reorder|rootPrims|scale|subLayers|suffixSubstitutions|specializes|symmetryArguments|symmetryFunction|timeSamples|variants|variantSets)\\b"
+				}
+			]
 		},
 		"storage": {
-			"patterns": [{
-				"name": "storage.type.usd.base",
-				"match": "\\b(bool|uchar|int|uint|int64|uint64|half|float|double|string|token|asset|matrix2d|matrix3d|matrix4d|quatd|quatf|quath|double2|float2|half2|int2|double3|float3|half3|int3|double4|float4|half4|int4|rel)\\b"
-			},{
-				"name": "storage.type.usd.ext",
-				"match": "\\b(point3d|point3f|point3h|normal3d|normal3f|normal3h|vector3d|vector3f|vector3h|color3d|color3f|color3h|color4d|color4f|color4h|frame4d|texCoord2h|texCoord2d|texCoord2f|texCoord3h|texCoord3d|texCoord3f)\\b"
-			},{
-				"name": "storage.modifier.usd",
-				"match": "\\b(varying|uniform|custom)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "storage.type.usd.base",
+					"match": "\\b(bool|uchar|int|uint|int64|uint64|half|float|double|string|token|asset|matrix2d|matrix3d|matrix4d|quatd|quatf|quath|double2|float2|half2|int2|double3|float3|half3|int3|double4|float4|half4|int4|rel)\\b"
+				},
+				{
+					"name": "storage.type.usd.ext",
+					"match": "\\b(point3d|point3f|point3h|normal3d|normal3f|normal3h|vector3d|vector3f|vector3h|color3d|color3f|color3h|color4d|color4f|color4h|frame4d|texCoord2h|texCoord2d|texCoord2f|texCoord3h|texCoord3d|texCoord3f)\\b"
+				},
+				{
+					"name": "storage.modifier.usd",
+					"match": "\\b(varying|uniform|custom)\\b"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.parameter.usda",
+					"match": "[a-zA-Z_:][a-zA-Z0-9_:]*"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.usd",
