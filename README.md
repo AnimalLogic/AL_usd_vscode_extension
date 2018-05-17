@@ -4,24 +4,7 @@
 
 Pixar USD Ascii syntax highlighting for VSCode.
 
-## Requirements
-
-NA
-
-## Extension Settings
-
-NA
-
-## Known Issues
-
-NA
-
-## Release Notes
-
-### 0.0.1
-
-First Release.
------------------------------------------------------------------------------------------------------------
+## [Release Notes](CHANGELOG.md)
 
 ### For more information
 
