@@ -1,0 +1,32 @@
+{
+    "name": "vscode-usda-syntax",
+    "displayName": "USD ASCII Syntax",
+    "description": "Pixar USD ASCII Language Extension by Animal Logic",
+    "version": "0.0.2",
+    "publisher": "animallogic",
+    "keywords": ["animallogic", "AL_USDMaya", "pixar", "usd", "usda"],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AnimalLogic/AL_usd_vscode_extension"
+    },
+    "icon": "images/animallogic_logo.jpg",
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "usd",
+            "aliases": ["USD", "usd"],
+            "extensions": [".usd",".usda"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "usd",
+            "scopeName": "source.usd",
+            "path": "./syntaxes/usd.tmLanguage.json"
+        }]
+    }
+}
