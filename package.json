@@ -2,7 +2,12 @@
     "name": "vscode-usda-syntax",
     "displayName": "USD ASCII Syntax",
     "description": "Pixar USD ASCII Language Extension by Animal Logic",
-    "version": "0.0.2",
+    "version": "0.0.3",
+    "author": {
+        "name": "Aloys Baillet",
+        "email": "aloys.baillet@al.com.au",
+        "url": "https://www.animallogic.com"
+    },
     "publisher": "animallogic",
     "keywords": ["animallogic", "AL_USDMaya", "pixar", "usd", "usda"],
     "repository": {

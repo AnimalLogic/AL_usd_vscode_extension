@@ -64,13 +64,46 @@
 			]
 		},
 		"strings": {
-			"name": "string.quoted.double.usd",
-			"begin": "\"|@|<",
-			"end": "\"|@|>",
+			"name": "",
 			"patterns": [
 				{
 					"name": "constant.character.escape.usd",
 					"match": "\\\\."
+				},
+				{
+					"name": "string.quoted.triple.asset.usd",
+					"begin": "(\\@\\@\\@)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.string.begin.asset.usd"
+						}
+					},
+					"end": "(\\1)",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.string.end.asset.usd"
+						}
+					}
+				},
+				{
+					"name": "string.quoted.double.usd",
+					"begin": "\"",
+					"end": "\""
+				},
+				{
+					"name": "string.quoted.double.asset.usd",
+					"begin": "@",
+					"end": "@"
+				},
+				{
+					"name": "string.quoted.double.path.usd",
+					"begin": "<",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.string.begin.path.usd"
+						}
+					},
+					"end": ">"
 				}
 			]
 		},
