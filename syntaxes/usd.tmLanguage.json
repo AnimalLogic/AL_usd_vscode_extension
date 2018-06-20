@@ -16,6 +16,9 @@
 		},
 		{
 			"include": "#comment"
+		},
+		{
+			"include": "#number"
 		}
 	],
 	"repository": {
@@ -62,6 +65,15 @@
 					"match": "[a-zA-Z_:][a-zA-Z0-9_:]*"
 				}
 			]
+		},
+		"number": {
+			"name": "constant.numeric.float.usda",
+			"match": "[-.0-9]",
+			"captures": {
+				"1": {
+					"name": "storage.type.imaginary.number.usda"
+				}
+			}
 		},
 		"strings": {
 			"name": "",
