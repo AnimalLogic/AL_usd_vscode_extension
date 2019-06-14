@@ -2,8 +2,28 @@
 const vscode = require("vscode");
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const fs = require('fs');
+const open = util.promisify(fs.open);
+const read = util.promisify(fs.read);
+const close = util.promisify(fs.close);
 
 const maxUsdFileSize = 1024 * 1024 * 500; // 500 MB
+
+async function isUsdcFile(path) {
+  // Try to read the file header.
+  try {
+    const fd = await open(path, 'r');
+    var buffer = Buffer.alloc(8);
+    await read(fd, buffer, 0, 8, 0);
+    const isUsdc = buffer.toString() == "PXR-USDC";
+    await close(fd);
+    return isUsdc;
+  }
+  catch (err) {
+  }
+  // Fallback to file extension.
+  return path.endsWith(".usdc");
+}
 
 async function resolveAsset(inputPath, anchorPath) {
   const template = vscode.workspace.getConfiguration().get('usd.resolve');
@@ -12,7 +32,7 @@ async function resolveAsset(inputPath, anchorPath) {
     const { stdout, stderr } = await exec(command);
     let result = stdout.trim(); // Trim new line characters.
     if (result.length > 0) {
-      if (result.endsWith(".usdc")) {
+      if (await isUsdcFile(result)) {
         result = "usdc:" + result;
       }
       return vscode.Uri.parse(result);
