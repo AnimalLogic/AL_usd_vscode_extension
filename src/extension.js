@@ -1,3 +1,7 @@
+/**
+ * Copyright (C) Animal Logic Pty Ltd. All rights reserved.
+ */
+
 'use strict';
 const vscode = require("vscode");
 const util = require('util');
