@@ -1,8 +1,8 @@
 # Change Log
 All notable changes to the "animallogic-usd" extension will be documented in this file.
 
-## [0.0.5]
-- Asset paths are now clickable links with asset resolution using usdresolve.
+## [0.1.0]
+- Asset paths are now clickable links with asset resolution using `usdresolve`.
 - Go To Definition works for prim paths within the same document.
 - Open .usdc files as readonly .usda preview.
 - Extended numeric highlighting to support hex (0x1234ABCD) and exponents (1.0e-2) syntax.
