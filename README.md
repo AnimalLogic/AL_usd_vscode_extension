@@ -1,14 +1,26 @@
-# USD ASCII Syntax
+# USD Language Support
 
-Pixar USD ASCII Language Extension by Animal Logic.
+Pixar USD Language Extension by Animal Logic.
 
 ## Features
 
-Pixar USD Ascii syntax highlighting for VSCode.
+Pixar USD ASCII syntax highlighting for VSCode.
 
-All standard USD Types and keywords as of USD-0.8.5.
+All standard USD Types and keywords.
 
 ![ScreenShot](images/kitchenset_vscode.png)
+
+USD navigation via `usdresolve`
+
+USDC (binary) support via `usdcat`
+
+![ScreenShot](images/kitchenset_navication.gif)
+
+## Credits
+
+* Pixar USD Team
+* Aloys Baillet (Animal Logic)
+* Curtis Black (Animal Logic)
 
 ### For more information
 
