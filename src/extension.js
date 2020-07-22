@@ -37,7 +37,6 @@ async function resolveAsset(inputPath, anchorPath) {
     let result = stdout.trim(); // Trim new line characters.
     if (result.length > 0) {
       var uri = vscode.Uri.file(result);
-      uri.scheme = "file" ;
       if (await isUsdcFile(result)) {
         uri.scheme = "usdc" ;
       }
