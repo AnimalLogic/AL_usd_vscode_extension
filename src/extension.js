@@ -36,10 +36,11 @@ async function resolveAsset(inputPath, anchorPath) {
     const { stdout, stderr } = await exec(command);
     let result = stdout.trim(); // Trim new line characters.
     if (result.length > 0) {
+      var uri = vscode.Uri.file(result);
       if (await isUsdcFile(result)) {
-        result = "usdc:" + result;
+        uri.scheme = "usdc" ;
       }
-      return vscode.Uri.parse(result);
+      return uri
     }
   }
   catch(err) {
@@ -212,7 +213,7 @@ class DocumentLinkProvider {
 // vs code doesn't currently provide a way to open binary files as text so we pretend that usdc files are virtual documents.
 class TextDocumentContentProvider {
   async provideTextDocumentContent(uri) {
-    return catUsdFile(uri.path);
+    return catUsdFile(uri.fsPath);
   }
 };
 
