@@ -144,6 +144,36 @@ function getPaths(document, lineNum) {
   return results;
 }
 
+function getArrays(document, lineNum) {
+  const results = [];
+  const line = document.lineAt(lineNum);
+  var start = 0;
+  var end = 0;
+  for (var i = line.firstNonWhitespaceCharacterIndex; i < line.text.length; i++) {
+    if (line.text[i] == '[') {
+      start = i;
+    }
+    else if (line.text[i] == ']') {
+      end = i;
+      const text = line.text.substring(start + 1, end)
+      var itemCount = 0;
+      if (text.length > 0)
+      {
+        var items = text.match(/\([^\)]*\)/g);
+        if (!items || items.length == 0)
+        {
+          items = text.split(",");
+        }
+        itemCount = items.length;
+      }
+      const range = new vscode.Range(new vscode.Position(lineNum, start + 1), new vscode.Position(lineNum, end));
+      results.push({ itemCount: itemCount, range: range });
+    }
+  }
+  return results;
+}
+
+
 class HoverProvider {
   async provideHover(document, position, token) {
     const assets = getAssets(document, position.line);
@@ -162,6 +192,13 @@ class HoverProvider {
       const path = paths[i];
       if (path.range.start.isBeforeOrEqual(position) && path.range.end.isAfterOrEqual(position)) {
         return new vscode.Hover([path.text], path.range);
+      }
+    }
+    const arrays = getArrays(document, position.line);
+    for(var i = 0; i < arrays.length; i++) {
+      const arr = arrays[i];
+      if (arr.range.start.isBeforeOrEqual(position) && arr.range.end.isAfterOrEqual(position)) {
+        return new vscode.Hover(["length: " + arr.itemCount], arr.range);
       }
     }
     return null;
